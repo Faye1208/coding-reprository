@@ -40,7 +40,7 @@ import registerServiceWorker from './registerServiceWorker';;
 // // 订阅事件，每次state发生变化就会触发
 // store.subscribe(listener);
 
-// // 派发action，
+// // 派发action
 // store.dispatch({type:ADD_GUN});
 // store.dispatch({type:ADD_GUN});
 // store.dispatch({type:ADD_GUN});
@@ -48,7 +48,7 @@ import registerServiceWorker from './registerServiceWorker';;
 // store.dispatch({type:REMOVE_GUN});
 
 
-// 手动结合redux和react
+// 手动结合redux和react,往后的组件需要读取state相关的数据时都需要手动从这个组件的父组件传入store或者其它action creator
 // 定义一个render函数，store.subscribe()的参数只能是function。
 function render(){
 	ReactDOM.render(
