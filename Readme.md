@@ -1,1 +1,2 @@
-.eaid
+about redux
+
