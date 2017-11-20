@@ -1,6 +1,6 @@
 > 安装redux:
 
-          $  npm install redux --save
+     $  npm install redux --save
 
 ----
 
