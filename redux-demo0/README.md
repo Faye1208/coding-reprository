@@ -1,9 +1,5 @@
 > 使用redux进行状态管理
 
-
-> 使用react-redux库将react和redux进行连接
-
-
 > 使用redux-thunk中间件处理异步操作
 
 
@@ -11,3 +7,5 @@
 
 
 > 引入redux-devtools浏览器调试工具
+
+> 使用react-redux库将react和redux进行连接
