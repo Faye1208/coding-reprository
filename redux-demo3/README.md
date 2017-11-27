@@ -2,7 +2,7 @@
 
  + 安装：npm install react-redux --save
 
- + 没有subscribe函数，记住reducer，action和dispatch
+ + 没有subscribe函数，只需要store，reducer，action和dispatch
 
  + 提供Provider和connect两个接口
 
@@ -10,10 +10,10 @@
 
   + 在组件应用的最外层包裹上Provider组件
 
-  + 把store作为属性
+  + 把传入store作为属性
 
 > connect的应用
 
   + 把外部组件的东西转化为自己组件的props
 
-  + 使用装饰器的方式写connect
+  + 可以使用装饰器的方式写connect

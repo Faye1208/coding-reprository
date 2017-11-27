@@ -49,12 +49,29 @@
 
 > 流程：
 
-   **首次渲染**：安装redux --> 引入createStore模块 --> 创建reducer函数，接收两个参数，分别是state和action，最后返回一个新的state --> 将reducer传入createStore()函数，生成store
+   **首次**：安装redux --> 引入createStore模块 --> 创建reducer函数，接收两个参数，分别是state和action，最后返回一个新的state --> 将reducer传入createStore()函数，生成store
 
-   **再次渲染**：用户操作（点击"添加"按钮）触发store.dispatch(actionObj)派发事件 --> reducer接收action和state，返回新的state -->
+   **再次**：用户操作（点击"添加"按钮）触发store.dispatch(actionObj)派发事件 --> reducer接收action和state，返回新的state -->
   触发store.subscribe(listener)
 
  ---
 
 > 手写react和redux结合例子
 
+ + 新建index.redux.js文件,定义操作类型，reducer和action creator
+
+ + 在index.js中，
+
+       引入reducer，创建store，把store传给App组件作为属性；
+
+       接着声明一个渲染函数render(),执行并用传入subscribe(render),以便state变化可以即时更新；
+
+       引入action creator，并传给App组件作为属性；
+
+
+
+ + 在App.js中，派发事件
+
+        从父组件中拿到store和action creator，创建点击事件触发事件派发
+
+ + 这种方式读取state或者action creator需要通过层层传递，特别繁琐，引入react-redux会方便很多。
