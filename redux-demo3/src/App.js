@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addGun, removeGun, addGunAsync } from './index.redux.js';
 import logo from './logo.svg';
 import './App.css';
+import Demo from './demo';
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
         <button onClick={this.props.addGun}>加枪支</button>
         <button onClick={this.props.removeGun}>减枪支</button>
         <button onClick={this.props.addGunAsync}>延迟添加枪支</button>
+          <Demo/>
       </div>
     );
   }
