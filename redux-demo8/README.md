@@ -8,4 +8,10 @@
 
       + 实现applyMiddleware功能
 
-  + redux-thunk中间件
+    + 多个中间件的情况
+
+
+  + 实现一个自定义arrayThunk中间件
+
+
+> 实现compose功能

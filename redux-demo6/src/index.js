@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// 引入applyMiddleware
 import {createStore} from './self.redux';
 import {Provider} from "./self.react-redux";
 import App from './App';

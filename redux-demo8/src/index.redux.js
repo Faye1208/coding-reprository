@@ -22,6 +22,11 @@ export function removeGun () {
     return {type: REMOVE_GUN};
 }
 
+export function addTwice () {
+    console.log('add twice');
+    return [addGun(), addGunAsync()];
+}
+
 export function addGunAsync () {
     console.log('async1');
     return dispatch => {
@@ -31,4 +36,6 @@ export function addGunAsync () {
         }, 2000);
     }
 }
+
+
 

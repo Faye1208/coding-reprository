@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from './self.react-redux';
 import logo from './logo.svg';
 import './App.css';
-import {addGun, removeGun, addGunAsync} from "./index.redux";
+import {addGun, removeGun, addGunAsync, addTwice} from "./index.redux";
 
 class App extends Component {
     render () {
@@ -20,6 +20,7 @@ class App extends Component {
                 <button onClick={this.props.addGun}>加枪支</button>
                 <button onClick={this.props.removeGun}>减枪支</button>
                 <button onClick={this.props.addGunAsync}>延迟两天再加</button>
+                <button onClick={this.props.addTwice}>申请两把</button>
             </div>
         );
     }
@@ -27,7 +28,7 @@ class App extends Component {
 
 App = connect(
     state => ({num: state}),
-    {addGun, removeGun, addGunAsync}
+    {addGun, removeGun, addGunAsync, addTwice}
 )(App);
 
 export default App;
