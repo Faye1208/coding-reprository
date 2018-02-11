@@ -1,38 +1,60 @@
 import React, {Component} from 'react';
+import {Map, is} from 'immutable';
 // import logo from './logo.svg';
 import './App.css';
 
+// immutable的使用例子
+// 例子一:使用Map
+let obj0 = Map({
+    name: 'Faye',
+    course: Map({name: 'Jenny'})
+});
+
+let obj1 = obj0.set('name', 'May');
+console.log(obj0.get('course') === obj1.get('course'));
+console.log(obj0 === obj1);
+
+// 例子二:使用is
+let obj2 = Map({name: 1, title: 'Faye'});
+let obj3 = Map({name: 1, title: 'Faye'});
+console.log(is(obj2, obj3));
+
+// 结合immutable定制组件
 class App extends Component {
     constructor (props) {
         super(props);
-        this.state = {
+        this.state = Map({
             num: 1,
             title: true
-        };
+        });
 
         this.handleClickNum = this.handleClickNum.bind(this);
         this.handleClickTitle = this.handleClickTitle.bind(this);
     }
 
     handleClickNum () {
-        this.setState({
-            num: this.state.num + 1
-        });
+        console.log(this.state);
+        this.setState(
+            // this.state.set('num', this.state.get('num') + 1)
+        );
     }
 
     handleClickTitle () {
-        this.setState({
-            title: !this.state.title
-        });
+        // this.setState({
+        //     title: !this.state.title
+        // });
+        this.setState(
+            // this.state.set('title',!this.state.get('title'))
+        )
     }
 
     render () {
         return (
             <div className="App">
-                <h2>App, {this.state.num}</h2>
+                <h2>App, {this.state.get('num')}</h2>
                 <button onClick={this.handleClickNum}>btnNum</button>
                 <button onClick={this.handleClickTitle}>btnTitle</button>
-                <Demo title={this.state.title}/>
+                <Demo title={this.state.get('title')}/>
             </div>
         );
     }
@@ -41,11 +63,7 @@ class App extends Component {
 class Demo extends Component {
     // 性能优化
     shouldComponentUpdate (nextProps, nextState) {
-        if (nextProps.title === this.props.title) {
-            return false;
-        }
-
-        return true;
+        return is(nextProps, this.props);
     }
 
     render () {
